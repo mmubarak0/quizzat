@@ -1,5 +1,6 @@
 {
   "name": "quizzat",
+  "packageManager": "yarn@4.3.1",
   "version": "1.0.0",
   "description": "Quiz app",
   "main": "server.js",
@@ -16,8 +17,8 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-session": "^1.18.0",
-    "mongodb": "^6.8.0",
-    "jsonwebtoken": "^9.0.2"
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.8.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"
