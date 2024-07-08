@@ -1,0 +1,15 @@
+name: lint-test
+run-name: eslint and jest tests
+on: [push, pull_request]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: corepack enable
+      - run: yarn install
+      - run: yarn lint
+      - run: yarn test
