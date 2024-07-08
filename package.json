@@ -3,7 +3,7 @@
   "packageManager": "yarn@4.3.1",
   "version": "1.0.0",
   "description": "Quiz app",
-  "main": "server.js",
+  "main": "backend/api_server.js",
   "author": "ki2kid",
   "license": "MIT",
   "scripts": {
@@ -21,6 +21,9 @@
     "mongodb": "^6.8.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.4"
+    "jest": "^29.7.0",
+    "node-notifier": "^10.0.1",
+    "nodemon": "^3.1.4",
+    "supertest": "^7.0.0"
   }
 }
