@@ -13,19 +13,19 @@ Quizzat is a simple quiz app that allows you to create and play quizzes.
 
 ## API Endpoints
 ### Quizzes
-- `GET /api/quizzes` - Get all quizzes.
-- `GET /api/quizzes/:id` - Get a quiz by id.
-- `POST /api/quizzes` - Create a new quiz.
+- `GET /api/v1/quizzes` - Get all quizzes.
+- `GET /api/v1/quizzes/:id` - Get a quiz by id.
+- `POST /api/v1/quizzes` - Create a new quiz.
 ### Questions
-- `POST /api/quizzes/:quizId/questions` - Create a new question for a quiz.
+- `POST /api/v1/quizzes/:quizId/questions` - Create a new question for a quiz.
 ### Answers
-- `POST /api/quizzes/:quizId/questions/:questionId/answers` - Create a new answer for a question.
+- `POST /api/v1/quizzes/:quizId/questions/:questionId/answers` - Create a new answer for a question.
 ### Users
-- `GET /api/users` - Get all users.
-- `GET /api/users/:id` - Get a user by id.
-- `POST /api/users` - Create a new user.
+- `GET /api/v1/users` - Get all users.
+- `GET /api/v1/users/:id` - Get a user by id.
+- `POST /api/v1/users` - Create a new user.
 ### Responses: 
-- `GET /api/quizzes/:id`:
+- `GET /api/v1/quizzes/:id`:
 ```json
 [
     {
