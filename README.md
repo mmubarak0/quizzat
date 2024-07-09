@@ -7,6 +7,10 @@ Quizzat is a simple quiz app that allows you to create and play quizzes.
 ![image](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
 ![image](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 
+[![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/standard/semistandard)
+![image](https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white)
+![image](https://img.shields.io/badge/Jest-323330?style=for-the-badge&logo=Jest&logoColor=white)
+
 ## API Endpoints
 ### Quizzes
 - `GET /api/quizzes` - Get all quizzes.

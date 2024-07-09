@@ -3,7 +3,6 @@ const app = express();
 const cors = require('cors');
 // const mongodb = require('mongodb');
 
-
 app.use(express.json());
 app.use(cors());
 
