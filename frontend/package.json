@@ -16,7 +16,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint"
+    "lint": "semistandard && eslint"
   },
   "eslintConfig": {
     "extends": [
@@ -39,6 +39,15 @@
   "devDependencies": {
     "eslint": "8.x",
     "eslint-plugin-react": "^7.34.3",
+    "semistandard": "^17.0.0",
     "globals": "^15.8.0"
-  }
+  },
+  "semistandard": {
+    "ignore": [
+      "*.test.js",
+      "*.spec.js",
+      "eslint.config.mjs"
+    ]
+  },
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }
