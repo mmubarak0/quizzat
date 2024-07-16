@@ -11,6 +11,38 @@ Quizzat is a simple quiz app that allows you to create and play quizzes.
 ![image](https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white)
 ![image](https://img.shields.io/badge/Jest-323330?style=for-the-badge&logo=Jest&logoColor=white)
 
+## Dev Dependencies
+- [Node.js](https://nodejs.org)
+- [MongoDB](https://www.mongodb.com)
+- [Express](https://expressjs.com)
+- [React](https://reactjs.org)
+- [Jest](https://jestjs.io)
+- [ESLint](https://eslint.org)
+- [Semistandard](https://github.com/standard/semistandard)
+
+## Frontend Setup
+1. Clone the repository.
+2. Navigate to the `frontend` directory.
+3. Install the dependencies: `yarn install`.
+4. Start the development server: `yarn start`.
+5. Open your browser and navigate to `http://localhost:3000`.
+
+## Backend Setup
+1. Clone the repository.
+2. Navigate to the `backend` directory.
+3. Install the dependencies: `yarn install`.
+4. Start the development server: `yarn start`.
+5. Backedn server will be running on `http://localhost:4000`.
+
+## Contribution Guide
+1. Fork the repository. // skip if you are a collaborator.
+2. Clone the forked repository. // skip if you are a collaborator.
+3. Create a new branch with you name as follows: `git switch -c <your-name>-dev`.
+4. Make your changes.
+5. Commit your changes: `git commit -m "feat: add new feature"`.
+6. Push your changes: `git push origin <your-name>-dev`.
+7. Create a pull request.
+
 ## API Endpoints
 ### Quizzes
 - `GET /api/v1/quizzes` - Get all quizzes.

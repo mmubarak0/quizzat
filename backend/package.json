@@ -7,10 +7,11 @@
   "author": "ki2kid",
   "license": "MIT",
   "scripts": {
-    "start": "node backend/api_server.js",
-    "dev": "nodemon backend/api_server.js",
+    "start": "node api_server.js",
+    "dev": "nodemon api_server.js",
     "test": "jest",
-    "lint": "semistandard && eslint backend/"
+    "test:watch": "jest --watch",
+    "lint": "semistandard && eslint --fix"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
