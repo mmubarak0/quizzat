@@ -1,10 +1,11 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-// const mongodb = require('mongodb');
+const authRouter = require('./routes/auth');
 
 app.use(express.json());
 app.use(cors());
+app.use('/api/v1/auth', authRouter);
 
 app.get('/', (req, res) => {
   res.json({ message: 'Hello World', statusCode: 200 });
