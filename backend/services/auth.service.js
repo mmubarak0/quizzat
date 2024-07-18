@@ -9,9 +9,7 @@ class AuthService {
       const { email, password, firstName, lastName } = req.body;
       const user = await userService.getUserByEmail(email);
       if (user) {
-        return res
-          .status(422)
-          .json({ message: 'User already exists', statusCode: 422 });
+        return res.status(422).json({ message: ['User already exists'], statusCode: 422 });
       }
       const hash = await bcrypt.hash(password, 10);
       const new_user = await userService.createUser({
@@ -20,16 +18,18 @@ class AuthService {
         firstName,
         lastName,
       });
+      let tokens = await userService.generateToken({email, hash});
+      res.cookie('refreshToken', tokens.refreshToken, {
+        httpOnly: true,
+      });
       res.status(201).json({
-        message: 'success',
+        message: ['success'],
         statusCode: 201,
+        ...tokens,
         data: await userService.getUserById(new_user.insertedId),
       });
     } catch (error) {
-      console.log(error);
-      res
-        .status(500)
-        .json({ message: 'Internal Server Error', statusCode: 500 });
+      res.status(500).json({ message: ['Internal Server Error'], statusCode: 500 });
     }
   }
 
@@ -38,20 +38,18 @@ class AuthService {
       const { email, password } = req.body;
       const user = await userService.getUserByEmail(email);
       if (!user) {
-        return res
-          .status(400)
-          .json({ message: 'User not found', statusCode: 400 });
+        return res.status(400).json({ message: ['User not found'], statusCode: 404 });
       }
       if (!bcrypt.compare(password, user.password)) {
-        return res
-          .status(400)
-          .json({ message: 'Invalid password', statusCode: 400 });
+        return res.status(400).json({ message: ['Invalid password'], statusCode: 400 });
       }
-      res.status(200).json({ message: 'Login successful', statusCode: 200 });
+      let tokens = await userService.generateToken(user);
+      res.cookie('refreshToken', tokens.refreshToken, {
+        httpOnly: true,
+      });
+      res.status(200).json({ message: ['Login successful'], statusCode: 200, ...tokens });
     } catch (error) {
-      res
-        .status(500)
-        .json({ message: 'Internal Server Error', statusCode: 500 });
+      res.status(500).json({ message: ['Internal Server Error'], statusCode: 500 });
     }
   }
 }

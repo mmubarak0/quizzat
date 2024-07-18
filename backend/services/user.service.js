@@ -1,7 +1,8 @@
 const client = require('../db');
-const { DATABASE_NAME, USERS_COLLECTION } = require('../config');
+const { DATABASE_NAME, USERS_COLLECTION, JWT_SECRET, JWT_EXPIRATION } = require('../config');
 const database = client.db(DATABASE_NAME);
 const users = database.collection(USERS_COLLECTION);
+const jwt = require('jsonwebtoken');
 
 class userService {
   constructor() {}
@@ -16,6 +17,14 @@ class userService {
 
   async createUser(user) {
     return users.insertOne(user);
+  }
+
+  async generateToken(user) {
+    const accesstoken = jwt.sign({ email: user.email, password: user.password }, JWT_SECRET, { expiresIn: '5m' });
+    const refreshToken = jwt.sign({ email: user.email, password: user.password }, JWT_SECRET, {
+      expiresIn: JWT_EXPIRATION,
+    });
+    return { accesstoken, refreshToken };
   }
 }
 
