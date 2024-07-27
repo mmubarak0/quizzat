@@ -1,5 +1,8 @@
-const app = require('./app');
+require("dotenv").config();
 
-app.listen(4000, () => {
-  console.log('Server is running on http://localhost:4000');
+const app = require("./api/app");
+const { SCHEMA, HOST, PORT } = require("./config");
+
+app.listen(PORT, HOST, () => {
+  console.log(`Server is running on ${SCHEMA}://${HOST}:${PORT}`);
 });
