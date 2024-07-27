@@ -1,4 +1,4 @@
-const { DATABASE_URI } = require('./config');
+const { DATABASE_URI } = require('../../config');
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
 const client = new MongoClient(DATABASE_URI, {
